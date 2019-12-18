@@ -1,24 +1,16 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="index.css">
-    <script src="index.js"></script>
-
-    <!-- TODO: Move into index.js. -->
-    <!-- Based on code on page http://asciimath.org/ -->
-  <script async
-	  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
-  </script>
-
   </head>
 
   <body>
 
     <!-- Frozen widget -->
     <div class="widget">
-      <div class="eqn">
+      <div class="eqn" id="tgt0">
 	\[\alpha\]
       </div>
-      <textarea rows="1" cols="20" readonly>\alpha</textarea>
+      <textarea rows="1" cols="20" id="src0" readonly>\alpha</textarea>
     </div>
 
     <!-- Active widget -->
@@ -28,5 +20,17 @@
       <textarea rows="1" cols="20" id="src"></textarea>
     </div>
 
+    <button id="next">Next</button>
+
   <body>
+
+    <!-- Put scripts at end to avoid use of on load event. -->
+    <script src="index.js"></script>
+
+    <!-- TODO: Move into index.js. -->
+    <!-- Based on code on page http://asciimath.org/ -->
+  <script async
+	  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+  </script>
+
 </html>

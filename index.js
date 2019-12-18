@@ -25,3 +25,32 @@ window.MathJax = {
 	})
     }
 }
+
+
+var examples = [
+    '2 + 2 = 4',
+    '\\alpha',
+    '\\frac{1}{2}',
+];
+
+examples.ptr = -1
+
+
+var next = document.getElementById('next').onclick = (
+    function(){
+
+	examples.ptr = (examples.ptr + 1) % examples.length;
+	example = examples[examples.ptr]
+	document.getElementById('src0').value = example;
+
+	var tgt = document.getElementById('tgt0');
+	var jax = MathJax.Hub.getAllJax(tgt)[0]
+	MathJax.Hub.Queue(['Text', jax, example])
+
+	document.getElementById('src').value = '';
+	document.getElementById('src').dispatchEvent(
+	    new Event('input', { bubbles: true })
+	);
+
+    }
+)
