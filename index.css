@@ -1,0 +1,20 @@
+div.widget {
+    border: 2px dashed green;
+    width: 80px;
+    margin: 4px;
+}
+
+div.widget
+div.eqn
+{
+    border: 2px dashed yellow;
+    width: 70px;
+    height: 50px;
+    margin: 4px;
+}
+
+div.widget textarea {
+    border: 2px dashed blue;
+    margin: 4px;
+    resize: none;
+}
