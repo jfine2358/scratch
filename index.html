@@ -1,6 +1,14 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="index.js"></script>
+
+    <!-- TODO: Move into index.js. -->
+    <!-- Based on code on page http://asciimath.org/ -->
+  <script async
+	  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+  </script>
+
   </head>
 
   <body>
@@ -8,15 +16,16 @@
     <!-- Frozen widget -->
     <div class="widget">
       <div class="eqn">
+	\[\alpha\]
       </div>
-      <textarea rows="1" cols="20"></textarea>
+      <textarea rows="1" cols="20" readonly>\alpha</textarea>
     </div>
 
     <!-- Active widget -->
     <div class="widget">
-      <div class="eqn">
+      <div class="eqn" id="tgt">\[\]
       </div>
-      <textarea rows="1" cols="20"></textarea>
+      <textarea rows="1" cols="20" id="src"></textarea>
     </div>
 
   <body>
