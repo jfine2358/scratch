@@ -5,29 +5,29 @@
 
   <body>
 
-    <!-- Frozen widget     -->
+    <h1>TeX typing tutor</h1>
 
-    <div class="widget">
-      <span class="eqn" id="tgt0">
-	\[\alpha\]
-      </span>
-
-      <span class="eqn" id="tgt">\[\]
-      </span>
-
+    <div>
+      <span class="eqn" id="tgt0">\[\]</span>
+      <span class="eqn" id="tgt">\[\]</span>
     </div>
 
     <div>
-
-      <div>
-	<textarea rows="1" cols="20" id="src"></textarea>
-      </div>
-
-      <button id="next">Next</button>
-
+	<form id="form" action="javascript:">
+	  <input id="src" size="30">
+	</form>
     </div>
-    <textarea rows="1" cols="20" id="src0" readonly>\alpha</textarea>
 
+    <p>There are three boxes. Your task is to type the formula in the
+    first box. You type in the third box. The second box shows your
+    answer so far.</p>
+
+    <p>When you're done, press [Enter] to get a new task.</p>
+
+    <p>If you're stuck, you can peek at the answer. It's at the foot
+    of the page.</p>
+
+    <textarea rows="1" cols="20" id="src0" readonly>\alpha</textarea>
 
   <body>
 

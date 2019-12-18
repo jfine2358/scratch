@@ -12,6 +12,9 @@ window.MathJax = {
 
 	    MathJax.Hub.processSectionDelay = 0
 
+	    // Get the next (first) example.
+	    next();
+
 	    // Get nodes src and jax.
 	    var src = document.getElementById('src')
 	    var tgt = document.getElementById('tgt')
@@ -26,31 +29,32 @@ window.MathJax = {
     }
 }
 
-
 var examples = [
     '2 + 2 = 4',
+    'x^2 + y^2 = z^2',
     '\\alpha',
-    '\\frac{1}{2}',
+    '\\frac{1}{3} + \\frac{1}{6} =\\frac{1}{2}',
+    '\\int_{x=0}^1 x^2 \\, dx = \\frac{x^3}{3}'
 ];
 
 examples.ptr = -1
 
 
-var next = document.getElementById('next').onclick = (
-    function(){
+var next = function(){
 
-	examples.ptr = (examples.ptr + 1) % examples.length;
-	example = examples[examples.ptr]
-	document.getElementById('src0').value = example;
+    examples.ptr = (examples.ptr + 1) % examples.length;
+    example = examples[examples.ptr]
+    document.getElementById('src0').value = example;
 
-	var tgt = document.getElementById('tgt0');
-	var jax = MathJax.Hub.getAllJax(tgt)[0]
-	MathJax.Hub.Queue(['Text', jax, example])
+    var tgt = document.getElementById('tgt0');
+    var jax = MathJax.Hub.getAllJax(tgt)[0]
+    MathJax.Hub.Queue(['Text', jax, example])
 
-	document.getElementById('src').value = '';
-	document.getElementById('src').dispatchEvent(
-	    new Event('input', { bubbles: true })
-	);
+    document.getElementById('src').value = '';
+    document.getElementById('src').dispatchEvent(
+	new Event('input', { bubbles: true })
+    );
 
-    }
-)
+}
+
+document.getElementById('form').onsubmit = next
