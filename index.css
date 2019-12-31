@@ -6,13 +6,18 @@
     margin: 1%;
     width: 45%;
     min-height: 8ex;
+    background-color: BlanchedAlmond;
+
 }
 
-#answer {
+#answer_input {
     padding: 6px;
     margin: 1%;
+    background-color: BlanchedAlmond;
+    border: 1px white;
 }
 
 #solution_show {
-    margin-top: 10ex;
+    background-color: BlanchedAlmond;
+    padding: 4px;
 }

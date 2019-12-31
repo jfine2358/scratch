@@ -44,7 +44,7 @@ var next = function(){
 
     solutions.ptr = (solutions.ptr + 1) % solutions.length;
     solution = solutions[solutions.ptr]
-    document.getElementById('solution_show').value = solution;
+    document.getElementById('solution_show').innerText = solution;
 
 
 
@@ -66,6 +66,8 @@ var next = function(){
     document.getElementById('answer_input').dispatchEvent(
 	new Event('input', { bubbles: true })
     );
+
+    document.getElementById('answer_input').focus();
 
 }
 
