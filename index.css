@@ -1,5 +1,5 @@
-#tgt0,
-#tgt
+#solution_render,
+#answer_render
 {
     display: block;
     border: 1px solid gray;
@@ -8,11 +8,11 @@
     min-height: 8ex;
 }
 
-#src {
+#answer {
     padding: 6px;
     margin: 1%;
 }
 
-#src0 {
+#solution_show {
     margin-top: 10ex;
 }

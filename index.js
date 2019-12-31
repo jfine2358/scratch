@@ -12,24 +12,24 @@ window.MathJax = {
 
 	    MathJax.Hub.processSectionDelay = 0
 
-	    // Get the next (first) example.
+	    // Get the next (first) solution.
 	    next();
 
 	    // Get nodes src and jax.
-	    var src = document.getElementById('src')
-	    var tgt = document.getElementById('tgt')
-	    var jax = MathJax.Hub.getAllJax(tgt)[0]
+	    var answer = document.getElementById('answer_input')
+	    var answer_render = document.getElementById('answer_render')
+	    var jax = MathJax.Hub.getAllJax(answer_render)[0]
 
 	    // Have input at src queue update on jax.
-	    src.addEventListener('input', function() {
-	      MathJax.Hub.Queue(['Text', jax, src.value])
+	    answer_input.addEventListener('input', function() {
+	      MathJax.Hub.Queue(['Text', jax, answer.value])
 	    })
 
 	})
     }
 }
 
-var examples = [
+var solutions = [
     '2 + 2 = 4',
     'x^2 + y^2 = z^2',
     '\\alpha',
@@ -37,33 +37,33 @@ var examples = [
     '\\int_{x=0}^1 x^2 \\, dx = \\frac{x^3}{3}'
 ];
 
-examples.ptr = -1
+solutions.ptr = -1
 
 
 var next = function(){
 
-    examples.ptr = (examples.ptr + 1) % examples.length;
-    example = examples[examples.ptr]
-    document.getElementById('src0').value = example;
+    solutions.ptr = (solutions.ptr + 1) % solutions.length;
+    solution = solutions[solutions.ptr]
+    document.getElementById('solution_show').value = solution;
 
 
 
-    var tgt = document.getElementById('tgt');
-    var tgt0 = document.getElementById('tgt0');
-    var jax = MathJax.Hub.getAllJax(tgt0)[0];
+    var answer_render = document.getElementById('answer_render');
+    var solution_render = document.getElementById('solution_render');
+    var jax = MathJax.Hub.getAllJax(solution_render)[0];
 
     // Synchronize height of the render boxes.
     var update_height = function(){
-	tgt.style.height = tgt0.offsetHeight;
+	answer_render.style.height = solution_render.offsetHeight;
     }
 
     MathJax.Hub.Queue(
-	['Text', jax, example],
+	['Text', jax, solution],
 	[update_height]
     );
 
-    document.getElementById('src').value = '';
-    document.getElementById('src').dispatchEvent(
+    document.getElementById('answer_input').value = '';
+    document.getElementById('answer_input').dispatchEvent(
 	new Event('input', { bubbles: true })
     );
 
