@@ -1,21 +1,18 @@
 #tgt0,
 #tgt
 {
-    display: inline-block;
+    display: block;
     border: 1px solid gray;
     margin: 1%;
-    width: 45%
-
+    width: 45%;
+    min-height: 8ex;
 }
 
 #src {
-
     padding: 6px;
     margin: 1%;
-
 }
 
 #src0 {
-    margin-top: 50%;
-
+    margin-top: 10ex;
 }

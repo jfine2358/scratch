@@ -46,9 +46,21 @@ var next = function(){
     example = examples[examples.ptr]
     document.getElementById('src0').value = example;
 
-    var tgt = document.getElementById('tgt0');
-    var jax = MathJax.Hub.getAllJax(tgt)[0]
-    MathJax.Hub.Queue(['Text', jax, example])
+
+
+    var tgt = document.getElementById('tgt');
+    var tgt0 = document.getElementById('tgt0');
+    var jax = MathJax.Hub.getAllJax(tgt0)[0];
+
+    // Synchronize height of the render boxes.
+    var update_height = function(){
+	tgt.style.height = tgt0.offsetHeight;
+    }
+
+    MathJax.Hub.Queue(
+	['Text', jax, example],
+	[update_height]
+    );
 
     document.getElementById('src').value = '';
     document.getElementById('src').dispatchEvent(
