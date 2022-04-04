@@ -18,3 +18,9 @@
 # Other things to ignore.
 lwarp*txt
 *lwarpmkconf
+
+# Specific files to ignore.
+lwarpmk.conf
+tutorial-images.txt
+tutorial_html.html
+tutorial_html.tex
