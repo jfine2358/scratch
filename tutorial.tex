@@ -26,6 +26,8 @@
 ]{lwarp}
 % \boolfalse{FileSectionNames}  % If false, numbers the files.
 
+\usepackage{jfine2358-headrow}
+
 % --- LOAD PDFLATEX MATH FONTS HERE ---
 
 % --- OTHER PACKAGES ARE LOADED AFTER LWARP ---
@@ -54,15 +56,17 @@
 
 % \maketitle                      % Or titlepage/titlingpage environment.
 
-
+\begingroup
+\tracingall
 \begin{center}
   \begin{tabular}{ c c c }
-    HEAD1 & HEAD2 & HEAD3 \\ 
+    \headrow{HEAD1 & HEAD2 & HEAD3}\\ 
     cell1 & cell2 & cell3 \\ 
     cell4 & cell5 & cell6 \\  
     cell7 & cell8 & cell9    
   \end{tabular}
 \end{center}
+\endgroup
 
 \end{document}
 

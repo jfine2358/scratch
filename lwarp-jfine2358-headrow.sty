@@ -1,0 +1,11 @@
+\LWR@ProvidesPackageDrop{jfine2358-headrow}
+
+\let\Normal@LWR@htmltag\LWR@htmltag
+\gdef\jfine@LWR@htmltag #1{\Normal@LWR@htmltag{aaa#1}}
+
+
+\newcommand\headrow[1]{%
+  \global\let\LWR@htmltag\jfine@LWR@htmltag  
+  #1%
+  \global\let\LWR@htmltag\Normal@LWR@htmltag  
+}
