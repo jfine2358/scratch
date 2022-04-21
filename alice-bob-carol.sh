@@ -78,6 +78,7 @@ git --git-dir=carol \
 # repositories. (The difference you see is because I need a feature
 # that's only available in a more recent version of git than the one I
 # have.)
+# https://www.spinics.net/lists/git/msg386235.html
 diff -r bob carol
 
 # Finally, Carol will want to read the message from Alice.

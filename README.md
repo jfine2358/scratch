@@ -1,5 +1,17 @@
 # ISO vs TGZ vs GIT as TeXLive 2022 media
 
+### News - Thu 21 April 2022
+
+I've added two scripts that show the basics of how I intend to
+transfer files between git repositories.
+
+* [Alice send a message to Carol via Bob](alice-bob-carol.sh)
+* [Apple sends a tree of files to Cherry via Banana](apple-banana-cherry.sh)
+
+Because git networked file system, there's no problem adapting the
+script to transfer the files via the internet.
+
+
 ## A toy problem
 
 One way to install TeXLive is to download an ISO (i.e. a DVD image)
