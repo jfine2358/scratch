@@ -18,7 +18,7 @@ $ GIT_ALTERNATE_OBJECT_DIRECTORIES=/git-alt-obj/texlive/ \
     $(cat /git-alt-obj/texlive/pack/texlive-2022*root):tex/plain/knuth-lib/story.tex
 ```
 
-### Response
+#### Response
 
 And here's what comes back.
 
@@ -42,6 +42,25 @@ typesetting beautiful documents.
 \hrule
 \vfill\eject
 
+```
+
+#### Content of `/git-alt-obj`
+
+```bash
+$ ls -sh /git-alt-obj/texlive/pack/ | grep pack
+1.3G texlive-2010-texmf-dist-287d05469ee25c2375e22319fc1fb0b9c0fb4051.pack
+1.4G texlive-2011-texmf-dist-430f40e5064f41d2eed81cd83f78158735fc3808.pack
+1.6G texlive-2012-texmf-dist-cf7f31d632e5adf79472ecafba594816f3997d41.pack
+1.8G texlive-2013-texmf-dist-a9451b8debeb824af5024b755c16cdd6f1e73aa0.pack
+2.0G texlive-2014-texmf-dist-286fe1dbb6d6fd5b7141172a41458e8be9bb4ec3.pack
+2.1G texlive-2015-texmf-dist-b634349587c2787c9f04b600a34f5d030190404b.pack
+2.3G texlive-2016-texmf-dist-254d8ec1d2845749a24ea8e485415e451d751723.pack
+2.7G texlive-2017-texmf-dist-1e37ca86450504b6876fcf6ab76289f333734980.pack
+2.9G texlive-2018-texmf-dist-c22b8033a249f137429673f47e8304261725ca92.pack
+3.2G texlive-2019-texmf-dist-8132ba78f614c1eb216af27f65abe597e37346b1.pack
+3.6G texlive-2020-texmf-dist-8c9212b5bfaaebcbcfe267858ca0eba6c5391a8b.pack
+3.9G texlive-2021-texmf-dist-7493e3369269a9a1657b37428042aa8a2c6ec44d.pack
+4.1G texlive-2022-texmf-dist-24827e0e274c48ff25778b5135ac2959f7109a81.pack
 ```
 
 
