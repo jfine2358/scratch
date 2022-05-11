@@ -1,5 +1,50 @@
 # ISO vs TGZ vs GIT as TeXLive 2022 media
 
+### News - Wed 10 May 2022
+
+I've added a script to 
+* [convert a folder (directory) into a git pack file](pack_dir.sh).
+
+The rest of this news items is for actual and aspiring git experts. Ordinary users won't see any of this.
+
+#### Call
+
+Here's one way to access files in /git-alt-obj.
+
+```bash
+$ GIT_ALTERNATE_OBJECT_DIRECTORIES=/git-alt-obj/texlive/ \
+    git --git-dir=empty.git \
+    cat-file -p \
+    $(cat /git-alt-obj/texlive/pack/texlive-2022*root):tex/plain/knuth-lib/story.tex
+```
+
+### Response
+
+And here's what comes back.
+
+```tex
+\hrule
+\vskip 1in
+\centerline{\bf A SHORT STORY}
+\vskip 6pt
+\centerline{\sl    by A. U. Thor} % !`?`?! (modified)
+\vskip .5cm
+Once upon a time, in a distant
+  galaxy called \"O\"o\c c,
+there lived a computer
+named R.~J. Drofnats.
+
+Mr.~Drofnats---or ``R. J.,'' as
+he preferred to be called---% error has been fixed!
+was happiest when he was at work
+typesetting beautiful documents.
+\vskip 1in
+\hrule
+\vfill\eject
+
+```
+
+
 ### News - Thu 21 April 2022
 
 I've added two scripts that show the basics of how I intend to
