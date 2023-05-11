@@ -10,6 +10,25 @@ class ArxivId(OpaqueStr):
     def urls(self):
         return ArxivIdUrls(self._str)
 
+    @property
+    def dir_name(self):
+        '''Name of directory for storing article data.
+        '''
+
+        raw_id = self._str
+
+        old_style = bool('/' in raw_id)
+        new_style = bool('.' in raw_id)
+        if old_style + new_style != 1:
+            raise ValueError(f'{self} is malformed')
+
+        if old_style:
+            return '__'.join(self._str.split('/'))
+        elif new_style:
+            return '_'.join(self._str.split('.'))
+        else:
+            raise ValueError('f{self}: This cannot happen!')
+
 
 class ArxivIdUrls(OpaqueStr):
 
