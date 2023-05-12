@@ -103,6 +103,8 @@ key = 'html_log'
 results = []
 for id in random_ids:
 
+    break                       # Already done.
+
     class LogParser(HTMLParser):
 
         def handle_data(self, data):
